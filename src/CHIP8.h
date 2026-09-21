@@ -1,0 +1,85 @@
+#include <cstdint>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <SDL2/SDL.h>
+#include <vector>
+#include <chrono>
+#define WIDTH 64
+#define HEIGHT 32
+#define SCALE 10
+#define WINDOW_WIDTH WIDTH * SCALE
+#define WINDOW_HEIGHT HEIGHT * SCALE
+
+struct Chip8 {
+	uint8_t gfx[32 * 64] = {0};
+	uint8_t RAM[4096];
+	uint8_t V[16];
+	uint8_t SP;
+	uint16_t PC;
+	uint16_t I;
+	uint16_t STACK[16];
+	uint8_t DT;
+	uint8_t ST;
+	
+	 
+	
+
+	void setup() {
+		memset(RAM, 0, sizeof(RAM));
+		memset(V, 0, sizeof(V));
+		memset(STACK, 0, sizeof(STACK));
+		
+		I = 0;
+		DT = 0;
+		ST = 0;
+		SP = 0;
+		PC = 0x200;
+		
+			uint8_t font[16*5] = {
+		0xF0, 0x90, 0x90, 0x90, 0xF0,
+		0x20, 0x60, 0x20, 0x20, 0x70,
+		0xF0, 0x10, 0xF0, 0x80, 0xF0,
+		0xF0, 0x10, 0xF0, 0x10, 0xF0,
+		0x90, 0x90, 0xF0, 0x10, 0x10,
+		0xF0, 0x80, 0xF0, 0x10, 0xF0,
+		0xF0, 0x80, 0xF0, 0x90, 0xF0,
+		0xF0, 0x10, 0x20, 0x40, 0x40,
+		0xF0, 0x90, 0xF0, 0x90, 0xF0,
+		0xF0, 0x90, 0xF0, 0x10, 0xF0,
+		0xF0, 0x90, 0xF0, 0x90, 0x90,
+		0xE0, 0x90, 0xE0, 0x90, 0xE0,
+		0xF0, 0x80, 0x80, 0x80, 0xF0,
+		0xE0, 0x90, 0x90, 0x90, 0xE0,
+		0xF0, 0x80, 0xF0, 0x80, 0xF0,
+		0xF0, 0x80, 0xF0, 0x80, 0x80}; 
+		
+		memcpy(RAM, font, sizeof(font));
+		
+		
+		if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
+			std::cout << "Init error!" << SDL_GetError() << std::endl;
+			return;
+			}
+
+		
+		
+		
+		}
+	
+	int loadrom(std::string rom) {
+	std::ifstream ROM(rom, std::ios::binary | std::ios::ate);
+	if (!ROM.is_open()) {
+		return 1;
+	}
+	else { 
+	std::streamsize SIZE = ROM.tellg();
+	ROM.seekg(0, std::ios::beg);
+	ROM.read(reinterpret_cast<char*>(&RAM[0x200]), SIZE);
+	}
+	return 0;
+}
+
+};
+
+
