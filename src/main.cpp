@@ -3,7 +3,8 @@
 #include <iostream>
 uint8_t key_state[16] = {0};
 Chip8 emu;
-	
+
+
 int main() {
 	emu.setup();
 			SDL_Window* window = SDL_CreateWindow("Pomegranate - Chip 8 emulator", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
@@ -11,6 +12,7 @@ int main() {
 			std::cout << "Window creating error!" << SDL_GetError() << std::endl;
 			return 1;
 			}
+			bool draw = false;
 			SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
 	        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
             SDL_RenderClear(renderer);
@@ -38,16 +40,16 @@ int main() {
                  case SDL_KEYDOWN:
                  switch(event.key.keysym.sym) {
 					 case SDLK_1:
-					 key_state[0] = 1;
-					 break;
-					 case SDLK_2:
 					 key_state[1] = 1;
 					 break;
-					 case SDLK_3:
+					 case SDLK_2:
 					 key_state[2] = 1;
 					 break;
-					 case SDLK_4:
+					 case SDLK_3:
 					 key_state[3] = 1;
+					 break;
+					 case SDLK_4:
+					 key_state[12] = 1;
 					 break;
 					 case SDLK_q:
 					 key_state[4] = 1;
@@ -59,28 +61,28 @@ int main() {
 					 key_state[6] = 1;
 					 break;
 					 case SDLK_r:
-					 key_state[7] = 1;
-					 break;
-					 case SDLK_a:
-					 key_state[8] = 1;
-					 break;
-					 case SDLK_s:
-					 key_state[9] = 1;
-					 break;
-					 case SDLK_d:
-					 key_state[10] = 1;
-					 break;
-					 case SDLK_f:
-					 key_state[11] = 1;
-					 break;
-					 case SDLK_z:
-					 key_state[12] = 1;
-					 break;
-					 case SDLK_x:
 					 key_state[13] = 1;
 					 break;
-					 case SDLK_c:
+					 case SDLK_a:
+					 key_state[7] = 1;
+					 break;
+					 case SDLK_s:
+					 key_state[8] = 1;
+					 break;
+					 case SDLK_d:
+					 key_state[9] = 1;
+					 break;
+					 case SDLK_f:
 					 key_state[14] = 1;
+					 break;
+					 case SDLK_z:
+					 key_state[10] = 1;
+					 break;
+					 case SDLK_x:
+					 key_state[0] = 1;
+					 break;
+					 case SDLK_c:
+					 key_state[11] = 1;
 					 break;
 					 case SDLK_v:
 					 key_state[15] = 1;
@@ -90,16 +92,16 @@ int main() {
 					  case SDL_KEYUP:
                  switch(event.key.keysym.sym) {
 										 case SDLK_1:
-					 key_state[0] = 1;
+					 key_state[1] = 0;
 					 break;
 					 case SDLK_2:
-					 key_state[1] = 1;
-					 break;
-					 case SDLK_3:
 					 key_state[2] = 0;
 					 break;
-					 case SDLK_4:
+					 case SDLK_3:
 					 key_state[3] = 0;
+					 break;
+					 case SDLK_4:
+					 key_state[12] = 0;
 					 break;
 					 case SDLK_q:
 					 key_state[4] = 0;
@@ -111,28 +113,28 @@ int main() {
 					 key_state[6] = 0;
 					 break;
 					 case SDLK_r:
-					 key_state[7] = 0;
-					 break;
-					 case SDLK_a:
-					 key_state[8] = 0;
-					 break;
-					 case SDLK_s:
-					 key_state[9] = 0;
-					 break;
-					 case SDLK_d:
-					 key_state[10] = 0;
-					 break;
-					 case SDLK_f:
-					 key_state[11] = 0;
-					 break;
-					 case SDLK_z:
-					 key_state[12] = 0;
-					 break;
-					 case SDLK_x:
 					 key_state[13] = 0;
 					 break;
-					 case SDLK_c:
+					 case SDLK_a:
+					 key_state[7] = 0;
+					 break;
+					 case SDLK_s:
+					 key_state[8] = 0;
+					 break;
+					 case SDLK_d:
+					 key_state[9] = 0;
+					 break;
+					 case SDLK_f:
 					 key_state[14] = 0;
+					 break;
+					 case SDLK_z:
+					 key_state[10] = 0;
+					 break;
+					 case SDLK_x:
+					 key_state[0] = 0;
+					 break;
+					 case SDLK_c:
+					 key_state[11] = 0;
 					 break;
 					 case SDLK_v:
 					 key_state[15] = 0;
@@ -140,6 +142,7 @@ int main() {
 					  }
 			}
 				}
+		if (draw == true) {
             for (int y = 0; y < HEIGHT; y++) {
 				for (int x = 0; x != WIDTH; x++) {
 					int index = WIDTH * y + x;
@@ -150,14 +153,18 @@ int main() {
 							}
 					}
 				}
-				
+				draw = false;
+			}
 
 	SDL_UpdateTexture(texture, nullptr, sdl_pixels.data(), (int)(WIDTH * sizeof(Uint32)));
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, texture, nullptr, nullptr);
 	SDL_RenderPresent(renderer);
 	
-	    bool keyPressed;
+
+
+	for (int cycle = 0; cycle < 10; cycle++) { 
+		    bool keyPressed;
         uint16_t opcode = (emu.RAM[emu.PC] << 8) | emu.RAM[emu.PC + 1];	
 		uint8_t regx = (opcode >> 8) & 0x000F;
 		uint8_t regy = (opcode >> 4) & 0x000F;
@@ -167,15 +174,14 @@ int main() {
         uint16_t result;
         std::cout << "PC: 0x" << std::hex << emu.PC << " | OP: 0x" << opcode << std::dec << std::endl;
         fprintf(stderr, "PC: 0x%03X | OP: 0x%04X\n", emu.PC, opcode);
-
-	
-	
+        
 		switch(opcode & 0xF000) 
 		{
 			case 0x0000:
 			switch(opcode & 0x00FF) {
 				case 0x00E0:
 				memset(emu.gfx, 0,sizeof(emu.gfx));
+				draw = true;
 				break;
 				case 0x00EE:
 				--emu.SP;
@@ -306,9 +312,11 @@ int main() {
 									emu.V[15] = 1;
 									}
 								emu.gfx[sprite_index] ^= 1;
+							 
 					}
 				}
 			}
+			draw = true;
 				break;
 				case 0xE000:
 				switch (opcode & 0x00FF) {
@@ -329,14 +337,19 @@ int main() {
 					case 0x0007:
 					emu.V[regx] = emu.DT;
 					break;
-					case 0x000A:
+					case 0x000A: {
 					keyPressed = false;
 					for (int i = 0; i < 16; ++i) {
 						if (key_state[i] == 1) {
-							emu.V[regx] = 1;
+							emu.V[i] = i;
 							keyPressed = true;
-							}
+							break;
 						}
+						if (!keyPressed) {
+							emu.PC -= 2;
+						}
+					}
+				}
 					break;
 					case 0x0015:
 					emu.DT = emu.V[regx];
@@ -371,12 +384,21 @@ int main() {
 					break;
 					}
 emu.PC += 2;
-SDL_Delay(2);
+
+}
+
+if (emu.DT > 0) {
+	emu.DT--;
+	}
+if (emu.ST > 0) {
+	emu.ST--;
+	}
 }
 
 	
 	return 0;
 }
+
 	
 
 	
