@@ -32,7 +32,7 @@ But in the new build (release will be later), I’ve fixed most of the bugs. Tak
 <p>Android port</p>
 <p>Developers and special thanks</p>
 <p>Main Dev - <a href="https://github.com/rghazt/">Nasok</a></li> (aka. rghazt)</p>
-<p>Special thanks to the artist, who drew this gorgeous pomegranate logo. (tiktok - arinakmttid)</p>
+<p>Special thanks to the artist, who drew this gorgeous pomegranate logo. (tiktok - <a href="https://www.tiktok.com/@arinakmttid">arinakmttid</a></li>)</p>
 
 
 
