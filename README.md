@@ -21,7 +21,7 @@
 <p><small>Chip 8 layout &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC layout</small></p>
 <h2>Compatibility and tests</h2>
 <p>In the last release, Pomegranate had very bad test results. Most of the flags worked incorrectly, so most of the games weren't working properly.
-But in the new build (release will be later), I’ve fixed most of the bugs. Take a look at this
+But in the new build (release will be later), I’ve fixed most of the bugs. Take a look at this </p>&nbsp;&nbsp;&nbsp;&nbsp;
 <img width="644" height="355" alt="изображение" src="https://github.com/user-attachments/assets/bad81cbd-371f-4944-955f-6363f4567eb6" />
 <img width="654" height="371" alt="изображение" src="https://github.com/user-attachments/assets/f73cb7d8-40a9-4eac-9599-d2a6ba56bb10" />
 <img width="644" height="364" alt="изображение" src="https://github.com/user-attachments/assets/ebbccff4-aa7c-41b3-b867-9762a1960b56" />
