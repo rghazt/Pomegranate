@@ -2,8 +2,7 @@
 <h1><font color=#7E191B>Pomegranate</font></h1> 
 <img width="100" height="100" alt="IMG_20260923_112714_247(2)" src="https://github.com/user-attachments/assets/7400c8db-2172-4b53-96f0-d86204f6e5e9" />
 <p><small> yet, another CHIP8 emulator...</small></p>
-<img src="https://img.shields.io/badge/Linux-%23FCC624.svg?style=for-the-badge&logo=linux&logoColor=black"/><p><small> Windows </small></p><img src="https://img.shields.io/badge/Android-%233DDC84.svg?style=for-the-badge&logo=android&logoColor=white"/><p>
-<p><small>soon, maybe...</small>
+<img src="https://img.shields.io/badge/Linux-%23FCC624.svg?style=for-the-badge&logo=linux&logoColor=black"/><p><small> Windows </small></p><img src="https://img.shields.io/badge/Android-%233DDC84.svg?style=for-the-badge&logo=android&logoColor=white" <small>soon, maybe...</small></p>
 <h3 align="center">Pomegranate is an open-source CHIP8 emulator created using Cowgod's CHIP8 Technical Reference and Austin Morlan's guide
 </h3>
 <h2>Getting started</h2>
