@@ -15,8 +15,8 @@
 <h2> Key input </h2>
 <p>[1] [2] [3] [C] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1] [2] [3] [4]</p>  
 <p>[4] [5] [6] [D] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Q] [W] [E] [R] </p>
-<p>[A] [S] [D] [F] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1] [2] [3] [4] </p>
-<p>[Z] [X] [C] [V] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1] [2] [3] [4] </p>
+<p>[7] [8] [9] [E] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [A] [S] [D] [F] </p>
+<p>[A] [0] [B] [F] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Z] [X] [C] [V] </p>
 <p><small>Chip 8 layout &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC layout</small></p>
 <h2>Compatibility and tests</h2>
 <p>In the last release, Pomegranate had very bad test results. Most of the flags worked incorrectly, so most of the games weren't working properly.
