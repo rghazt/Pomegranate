@@ -25,14 +25,14 @@ But in the new build (release will be later), I’ve fixed most of the bugs. Tak
 <img width="644" height="355" alt="изображение" src="https://github.com/user-attachments/assets/bad81cbd-371f-4944-955f-6363f4567eb6" />
 <img width="654" height="371" alt="изображение" src="https://github.com/user-attachments/assets/f73cb7d8-40a9-4eac-9599-d2a6ba56bb10" />
 <img width="644" height="364" alt="изображение" src="https://github.com/user-attachments/assets/ebbccff4-aa7c-41b3-b867-9762a1960b56" />
-<p>Most of games work properly, but there are still many bugs, I need to fix</p>
+<p>Most of games work properly, but there are still many bugs that I will need fix</p>
 <h2>Future plans</h2>
 <p>Graphic UI</p>
 <p>Sound</p>
 <p>Android port</p>
 <p>Developers and special thanks</p>
-Main Dev - <a href="https://github.com/rghazt/">Nasok</a></li> (aka. rghazt)
-Special thanks to the artist, who drew this gorgeous pomegranate logo. (tiktok - arinakmttid)
+<p>Main Dev - <a href="https://github.com/rghazt/">Nasok</a></li> (aka. rghazt)</p>
+<p>Special thanks to the artist, who drew this gorgeous pomegranate logo. (tiktok - arinakmttid)</p>
 
 
 
