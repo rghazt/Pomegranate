@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <SDL2/SDL.h>
+#include <SDL3/SDL.h>
 #include <vector>
 #include <chrono>
 #define WIDTH 64
@@ -57,7 +57,7 @@ struct Chip8 {
 		memcpy(RAM, font, sizeof(font));
 		
 		
-		if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
+		if (!SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO | SDL_INIT_EVENTS)){
 			std::cout << "Init error!" << SDL_GetError() << std::endl;
 			return;
 			}
