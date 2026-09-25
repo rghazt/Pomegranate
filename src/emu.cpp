@@ -4,7 +4,7 @@
 uint8_t key_state[16] = {0};
 Chip8 emu;
 	SDL_AudioSpec spec {
-		.format = SDL_AUDIO_U8,
+		.format = SDL_AUDIO_F32,
 		.channels = 1,
 		.freq = 44800
 };
@@ -162,8 +162,12 @@ int main() {
 				draw = false;
 			}
 			for (int i = 0; i < BUFFER_SIZE; i++) {
-				buffer[i] = sin(2.0f * M_PI * SAMPLE_RATE * freq * sndtime) * 3;
-				sndtime += timestep;
+				buffer[i] = sin(2.0f * M_PI * freq * phase);
+				if (phase < 1/freq) {
+					phase += timestep;
+					} else {
+						phase = 0;
+						}
 				}
 
 	SDL_UpdateTexture(texture, nullptr, sdl_pixels.data(), (int)(WIDTH * sizeof(Uint32)));
@@ -423,7 +427,7 @@ emu.PC += 2;
 	}
 if (emu.ST > 0) {
     emu.ST--;
-    SDL_PutAudioStreamData(stream, buffer, 1024);
+    SDL_PutAudioStreamData(stream, buffer, sizeof(buffer));
 } 
 }
 

@@ -18,7 +18,7 @@ float buffer[BUFFER_SIZE];
 float volume = 0.2f;
 float freq = 440.0f;
 float timestep = 1.0f / SAMPLE_RATE;
-float sndtime = 0.0f;
+float phase = 0.0f;
 
 struct Chip8 {
 	uint8_t gfx[32 * 64] = {0};
