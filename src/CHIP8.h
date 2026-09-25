@@ -5,11 +5,20 @@
 #include <SDL3/SDL.h>
 #include <vector>
 #include <chrono>
+#include <math.h>
 #define WIDTH 64
 #define HEIGHT 32
 #define SCALE 10
 #define WINDOW_WIDTH WIDTH * SCALE
 #define WINDOW_HEIGHT HEIGHT * SCALE
+#define BUFFER_SIZE 1024
+#define SAMPLE_RATE 44800
+
+float buffer[BUFFER_SIZE];
+float volume = 0.2f;
+float freq = 440.0f;
+float timestep = 1.0f / SAMPLE_RATE;
+float sndtime = 0.0f;
 
 struct Chip8 {
 	uint8_t gfx[32 * 64] = {0};
