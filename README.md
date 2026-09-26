@@ -1,14 +1,15 @@
 <div>
 <h1><font color=#7E191B>Pomegranate</font></h1> 
 <img width="100" height="100" alt="IMG_20260923_112714_247(2)" src="https://github.com/user-attachments/assets/7400c8db-2172-4b53-96f0-d86204f6e5e9" />
-<img src="https://img.shields.io/badge/Linux-%23FCC624.svg?style=for-the-badge&logo=linux&logoColor=black"/><p><small> Windows </small></p><img src="https://img.shields.io/badge/Android-%233DDC84.svg?style=for-the-badge&logo=android&logoColor=white" <small>soon, maybe...</small></p>
+<p><img src="https://img.shields.io/badge/Linux-%23FCC624.svg?style=for-the-badge&logo=linux&logoColor=black"/></p>
+  <p><small> Windows </p>
 <h3 align="center">Pomegranate is an open-source multi-emulator platform with a simple and User-friendly UI. Right now there is only CHIP8. More emulators will be added later. Wait for updates!
 </h3>
 <h2>Getting started</h2>
   <p><ul>
   <li>Download build for your system from <a href="https://github.com/rghazt/Pomegranate/releases">releases</a></li>
   <li>Run main on Linux or Pomegranate.exe on Windows</li>
-  <li>Drag and drop your game rom. Here you go!</li>
+  <li>Drag and drop your legally owned game rom. Here you go!</li>
 </ul>
 </p>
 <h2> Key input </h2>
@@ -27,10 +28,13 @@ But in the new build (release will be later), I’ve fixed most of the bugs. Tak
 <h2>Future plans</h2>
 <p>Graphic UI</p>
 <p>Sound</p>
-<p>Due changes of Pomegranate concept, android port plan will be frozen, but not cancelled.</p>
+<p>Due to changes in the Pomegranate concept, the Android port has been frozen, but not canceled.</p>
 <h2>Developers and special thanks</h2>
 <p>Main Dev - <a href="https://github.com/rghazt/">Nasok</a></li> (aka. rghazt)</p>
 <p>Special thanks to the artist, who drew this gorgeous pomegranate logo. (tiktok - <a href="https://www.tiktok.com/@arinakmttid">arinakmttid</a></li>)</p>
+<h2> Anti-Piracy policy </h2>
+<p>Pomegranate was created solel for educational purposes. We do not provide, host or link to any copyrighted game files.
+User must provide their own legally owned game dumps. Thank you for understanding.</p>
 
 
 
