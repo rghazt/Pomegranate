@@ -1,0 +1,3 @@
+700 #CHIP-8 CONFIG. Change value to overclock or underclock CPU. 600 is stock value
+0xFF0F380F # Change value in HEX, to change display and sprites colors.
+0xFF8BAC0F
